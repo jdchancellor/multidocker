@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "mame": "client",
+            "image": "jdchancellor/multi-client",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "mame": "server",
+            "image": "jdchancellor/multi-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "mame": "worker",
+            "image": "jdchancellor/multi-worker",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "jdchancellor/multk-nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": [ "client", "server" ]
+        }
+
+    ]
+}
