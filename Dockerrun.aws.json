@@ -18,13 +18,13 @@
         {
             "mame": "worker",
             "image": "jdchancellor/multi-worker",
-            "hostname": "client",
+            "hostname": "worker",
             "essential": false,
             "memory": 128
         },
         {
             "name": "nginx",
-            "image": "jdchancellor/multk-nginx",
+            "image": "jdchancellor/multi-nginx",
             "essential": true,
             "memory": 128,
             "portMappings": [
