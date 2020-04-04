@@ -2,21 +2,21 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "mame": "client",
+            "name": "client",
             "image": "jdchancellor/multi-client",
             "hostname": "client",
             "essential": false,
             "memory": 128
         },
         {
-            "mame": "server",
+            "name": "server",
             "image": "jdchancellor/multi-server",
             "hostname": "api",
             "essential": false,
             "memory": 128
         },
         {
-            "mame": "worker",
+            "name": "worker",
             "image": "jdchancellor/multi-worker",
             "hostname": "worker",
             "essential": false,
